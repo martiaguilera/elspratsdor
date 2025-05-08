@@ -1,0 +1,140 @@
+.contingut-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/vidlogin.mp4') center/cover;
+}
+
+.seccio-login {
+    width: 100%;
+    max-width: 450px;
+}
+
+.caixa-login {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.titol-login {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.formulari-acces {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grup-camp {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grup-camp label {
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.grup-camp input {
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.grup-camp input:focus {
+    border-color: var(--color-destacat);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
+}
+
+.grup-opcions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.opcio-recordar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.text-recordar {
+    color: var(--color-text);
+}
+
+.enllac-oblidat {
+    color: var(--color-secundari);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.enllac-oblidat:hover {
+    color: var(--color-destacat);
+}
+
+.boto-entrar {
+    background: var(--color-destacat);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.boto-entrar:hover {
+    background: #c4966a;
+    transform: translateY(-2px);
+}
+
+.text-registre {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+.enllac-registre {
+    color: var(--color-destacat);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.enllac-registre:hover {
+    color: #c4966a;
+}
+
+/* Estils personalitzats pel checkbox */
+.opcio-recordar input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+    border: 2px solid var(--color-terciari);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.opcio-recordar input[type="checkbox"]:checked {
+    background-color: var(--color-destacat);
+    border-color: var(--color-destacat);
+}

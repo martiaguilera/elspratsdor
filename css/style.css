@@ -379,3 +379,41 @@ transform: scale(1.05); /* Fa que la imatge es faci un 5% més gran quan fas 'ho
 .bandera:hover { /* Estils per a les banderes quan hi passes el ratolí per sobre. */
   transform: scale(1.1); /* Make the flag slightly larger on hover */ /* Fa que la bandera es faci un 10% més gran quan fas 'hover'. */
 }
+
+/* Estils del carret de compra */
+.carret-compra {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.carret-compra svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-primari);
+    transition: var(--transicio);
+}
+
+.carret-compra:hover svg {
+    fill: var(--color-destacat);
+    transform: translateY(-2px);
+}
+
+.contador-carret {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--color-destacat);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
