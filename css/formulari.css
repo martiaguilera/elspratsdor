@@ -15,12 +15,17 @@
 .formulari {
     max-width: 600px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
   
 .formulari label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    color: var(--color-primari);
+    font-weight: 600;
   }
   
   .formulari input[type="text"],
@@ -28,12 +33,21 @@
   .formulari textarea {
     width: 100%;
     display: block;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
-    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    background-color: var(--color-fons);
+    border-radius: 8px;
     box-sizing: border-box; 
+    transition: border-color 0.3s ease;
+  }
+  
+  .formulari input[type="text"]:focus,
+  .formulari input[type="email"]:focus,
+  .formulari textarea:focus {
+    outline: none;
+    border-color: var(--color-secundari);
+    background-color: white;
   }
   
   .formulari textarea {
@@ -42,10 +56,17 @@
   }
   
   .formulari button[type="submit"] {
-    background-color: #c4966a;
-    padding: 10px 20px;
-    color: black;
+    background-color: var(--color-destacat);
+    padding: 12px 25px;
+    color: white;
     border: none;
     border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
+  .formulari button[type="submit"]:hover {
+    background-color: #c4966a;
+    transform: translateY(-1px);
+  }
