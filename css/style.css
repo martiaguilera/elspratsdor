@@ -103,6 +103,7 @@ nav.navegacio .llista_menu { /* Estils per a la llista desordenada ('ul') que t�
   font-weight: 600; /* Fa el text del botó més gruixut. */
   transition: var(--transicio); /* Aplica la transició per als efectes de 'hover'. */
   box-shadow: 0 4px 6px #0000001a; /* Afegeix una ombra lleugera sota el botó. */
+  margin-right: -15px;
 }
 
 .boto_accedir:hover { /* Estils per al botó 'Accedir' quan passes el ratolí per sobre. */
@@ -384,24 +385,25 @@ transform: scale(1.05); /* Fa que la imatge es faci un 5% més gran quan fas 'ho
 .carret-compra {
     display: flex;
     align-items: center;
-    margin-left: 15px;
+    margin-left: 20px;
     position: relative;
     cursor: pointer;
-    padding: 10px;
+    padding: 12px;
     border-radius: 50%;
     background: var(--color-destacat);
     transition: all 0.3s ease;
+    transform: translateX(5px);
 }
 
 .carret-compra:hover {
-    transform: translateY(-2px);
+    transform: translateX(5px) translateY(-2px);
     background: #c4966a;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carret-compra svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     fill: white;
 }
 
@@ -422,4 +424,11 @@ transform: scale(1.05); /* Fa que la imatge es faci un 5% més gran quan fas 'ho
     padding: 0 4px;
     border: 2px solid white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes adicionales para el menú */
+.llista_menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
 }
