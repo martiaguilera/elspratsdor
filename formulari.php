@@ -7,18 +7,14 @@ $dbname = "elspratsdor";
 $message = '';
 $messageType = '';
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connexio sense exit: " . $conn->connect_error);
 }
 
-// Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['submit'])) {
-        // Get and sanitize form data
         $nom = trim(htmlspecialchars($_POST['nom']));
         $tipus = $_POST['tipus'];
         $stock = (int)$_POST['stock'];
@@ -27,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $errors = [];
         
-        // Validate form data
         if (strlen($nom) < 3) {
             $errors[] = "El nom ha de tenir almenys 3 caràcters";
         }
@@ -48,7 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $errors[] = "El preu ha de ser major que 0";
         }
         
-        // If no errors, insert into database
         if (empty($errors)) {
             $sql = "INSERT INTO productes (nom, tipus, stock, data_caducitat, preu) VALUES (?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
@@ -57,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($stmt->execute()) {
                 $message = "Producte afegit correctament!";
                 $messageType = "success";
-                // Clear form data
                 $_POST = array();
             } else {
                 $message = "Error: " . $stmt->error;
@@ -69,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $messageType = "error";
         }
     } elseif (isset($_POST['clear'])) {
-        // Clear form data and messages
         $_POST = array();
         $message = '';
         $messageType = '';
@@ -99,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul class="llista_menu">
               <li><a href="index.html" class="element_menu">Inici</a></li>
               <li><a href="botiga.html" class="element_menu">Botiga</a></li>
-              <li><a href="formulari.html" class="element_menu">Formulari</a></li>
+              <li><a href="formulari.php" class="element_menu">Formulari</a></li>
               <li><a href="login.html" class="boto_accedir">Accedir</a></li>
               <li>
                 <a href="#" class="carret-compra">
