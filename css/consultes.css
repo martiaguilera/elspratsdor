@@ -1,0 +1,221 @@
+.seccio_consultes {
+    padding: 2rem 0;
+}
+
+.selector-container {
+    margin-bottom: 1.5rem;
+}
+
+#consultaSelector {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cerca-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+}
+
+.cerca-input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cerca-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cerca-button:hover {
+    background-color: #45a049;
+}
+
+.result-message {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background-color: white;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+.caixa {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.selector-container {
+    margin: 2rem 0;
+}
+
+select {
+    padding: 12px 16px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: var(--color-fons);
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: var(--color-destacat);
+    outline: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-primari);
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.result-message {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: var(--color-text);
+}
+
+h1 {
+    color: var(--color-primari);
+    margin-bottom: 1.5rem;
+}
+
+/* Cart styles */
+.carret-compra {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    background: var(--color-destacat);
+    transition: all 0.3s ease;
+    transform: translateX(5px);
+}
+
+.carret-compra:hover {
+    transform: translateX(5px) translateY(-2px);
+    background: #c4966a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carret-compra svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.contador-carret {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--color-primari);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+.cerca-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cerca-container input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.cerca-container button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cerca-container button:hover {
+    background-color: #45a049;
+}

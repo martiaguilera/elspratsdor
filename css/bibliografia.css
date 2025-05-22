@@ -1,0 +1,27 @@
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+h1 {
+    color: var(--color-primari);
+    margin: 2rem 0;
+}
+dl {
+    margin: 2rem 0;
+}
+dt {
+    font-weight: bold;
+    color: var(--color-secundari);
+    margin-top: 1.5rem;
+}
+dd {
+    margin: 0.5rem 0 0.5rem 2rem;
+}
+a {
+    color: var(--color-primari);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
