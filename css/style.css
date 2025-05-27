@@ -1,0 +1,434 @@
+:root { /* Imagina't això com una llista on guardes coses importants per utilitzar a tot el teu disseny. Com una paleta de colors o ajustos generals. */
+  --color-primari: #3a5a40; /* Aquesta variable guarda un color verd fosc. La podràs usar amb 'var(--color-primari)'. S'utilitza, per exemple, al fons del 'footer' (la part de baix de la pàgina). */
+  --color-secundari: #588157; /* Una variable per a un verd una mica més clar. El veuràs quan passes el ratolí per sobre del botó 'Accedir' a la part de dalt. */
+  --color-terciari: #a3b18a; /* Guarda un verd clar. Es fa servir per a la línia que hi ha entre els passos del 'nostre procés'. */
+  --color-fons: #f8f9fa; /* El color blanc trencat que va al darrere de gairebé tota la pàgina. */
+  --color-text: #2b2d42; /* El color gris fosc que utilitzem per a la majoria del text normal. */
+  --color-destacat: #d4a373; /* Un color taronja per cridar l'atenció. El veuràs als números del procés i sota algunes paraules importants. */
+  --ombra-card: 0 10px 20px #0000001a; /* Aquí guardem com volem que sigui una ombra estàndard per a les 'targetes', com les de les imatges. Els números controlen on es projecta i com és de difusa. */
+  --transicio: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Aquesta variable guarda una 'recepta' per fer que els canvis (com el color o la mida quan fas 'hover') siguin suaus i no de cop. Dura 0.3 segons. */
+}
+
+* { /* L'asterisc '*' vol dir "aplica això a ABSOLUTAMENT TOTS els elements de la pàgina". És una mica com posar regles generals per a tothom. */
+  margin: 0; /* Elimina l'espai que els elements tenen per defecte al seu voltant (marges exteriors). */
+  padding: 0; /* Elimina l'espai que els elements tenen per defecte per dins (espaiat interior). */
+  box-sizing: border-box; /* Aquesta regla fa que l'ample i l'alt que tu especifiques per a un element incloguin l'espaiat interior ('padding') i la vora ('border'). Això facilita molt calcular mides! */
+}
+
+html { /* Estils per a l'element principal 'html', que és com el contenidor de tot. */
+  scroll-behavior: smooth; /* Quan cliques un enllaç que et porta a una altra part de la mateixa pàgina (com l'enllaç 'Més informació ↓'), en lloc de saltar directament, es desplaça suaument. */
+}
+
+body { /* Estils per a tot el contingut visible de la teva pàgina web. Tot el que veus està dins del 'body'. */
+  font-family: 'Montserrat', sans-serif; /* Estableix la font de lletra principal per a la majoria del text. Si 'Montserrat' no carrega, utilitza una font genèrica 'sans-serif' (sense serifs, els petit adorns al final de les lletres). */
+  line-height: 1.7; /* Defineix l'espaiat entre les línies de text. Un valor d'1.7 fa que el text sigui més fàcil de llegir. */
+  color: var(--color-text); /* El color del text serà el que hem definit a la variable '--color-text' (el gris fosc). 'inherit' faria que heretés el color del seu pare, però aquí l'estem definint directament amb la variable. */
+  background-color: var(--color-fons); /* El color de fons de tota la pàgina serà el que hem definit a la variable '--color-fons'. */
+  overflow-x: hidden; /* Si el contingut s'estén més enllà de l'ample de la pantalla cap a la dreta o esquerra, això amaga la barra de desplaçament horitzontal i el contingut extra. Evita que aparegui una barra de scroll horitzontal. */
+}
+
+body:not(.pagina-login) { /* Aquesta regla s'aplica al 'body' sempre que NO tingui la classe CSS 'pagina-login'. Això és útil si tens una pàgina de login que no necessita aquest espaiat. */
+  padding-top: 100px; /* Afegeix 100 píxels d'espai a la part de dalt del 'body'. Això serveix per deixar lloc a la capçalera fixa sense que el contingut quedi tapat per ella. */
+}
+
+a { /* Estils per a TOTS els enllaços ('<a>' tags) de la pàgina. */
+  text-decoration: none; /* Elimina la línia que normalment apareix sota els enllaços. */
+  color: inherit; /* L'enllaç agafa el mateix color de text que el seu element pare. Per exemple, si està dins d'un text gris, serà gris. */
+}
+
+h1, h2, h3 { /* Estils que s'apliquen tant als títols de nivell 1 ('<h1>'), nivell 2 ('<h2>'), com a nivell 3 ('<h3>'). */
+  font-family: 'Playfair Display', serif; /* Estableix una font de lletra diferent per als títols. 'serif' vol dir que té els petits adorns al final de les lletres. */
+  font-weight: 700; /* Fa que el text dels títols sigui més gruixut (negreta). 700 és un valor comú per a negreta forta. */
+}
+
+header.part_superior { /* Estils per a l'element 'header' (la capçalera de la pàgina) que també té la classe CSS 'part_superior'. */
+  background: #ffffffF2; /* Li dona un fons blanc amb una mica de transparència (el 'F2' al final). */
+  box-shadow: 0 2px 10px #0000001a; /* Afegeix una ombra suau sota la capçalera per donar-li profunditat. */
+  position: fixed; /* Fa que la capçalera es quedi enganxada a dalt de la finestra del navegador, encara que facis 'scroll'. */
+  width: 100%; /* La capçalera ocuparà tot l'ample de la pantalla. */
+  top: 0; /* La col·loca exactament a la part de dalt de la pantalla (a 0 píxels del marge superior). */
+  z-index: 1000; /* Això és com posar capes. Un 'z-index' alt assegura que la capçalera sempre es vegi per sobre de la resta del contingut de la pàgina. */
+  backdrop-filter: blur(10px); /* Afegeix un efecte de desenfocament al que hi ha darrere de la capçalera (si té transparència), donant un efecte modern. */
+}
+
+header.part_superior .caixa { /* Estils per al 'div' amb la classe 'caixa' que es troba DINS de la capçalera. Aquest 'div' ajuda a centrar el contingut de la capçalera. */
+  display: flex; /* Converteix aquest 'div' en un contenidor Flexbox. Flexbox és una manera potent d'organitzar elements en fila o columna. */
+  justify-content: space-between; /* Dins del Flexbox, separa els elements fills (el logo i el menú de navegació) posant espai entre ells. */
+  align-items: center; /* Alinea els elements fills verticalment al centre. */
+  padding: 8px 5%; /* Afegeix 8 píxels d'espaiat per a dalt i baix, i un 5% de l'ample del contenidor pare als costats (esquerra i dreta). */
+}
+
+.logo_granja { /* Estils per a la imatge del logo amb la classe 'logo_granja'. */
+  height: 80px; /* Estableix l'alçada de la imatge a 80 píxels. */
+  width: auto; /* Fa que l'ample s'ajusti automàticament per mantenir les proporcions originals de la imatge. */
+  transition: var(--transicio); /* Aplica la transició suau que hem definit a la variable '--transicio'. Això farà que els canvis d'estil (com l'escalat) siguin fluids. */
+}
+
+.logo_granja:hover { /* Estils que s'apliquen a la imatge del logo quan l'usuari passa el ratolí per sobre. */
+  transform: scale(1.05); /* Fa que la imatge es faci una mica més gran (un 5% més) quan hi passes el ratolí. */
+}
+
+nav.navegacio .llista_menu { /* Estils per a la llista desordenada ('ul') que té la classe 'llista_menu' i es troba DINS de l'element 'nav' amb classe 'navegacio'. Aquesta és la llista de links del menú. */
+  list-style: none; /* Elimina els puntets que solen aparèixer per defecte davant dels elements d'una llista. */
+  display: flex; /* Converteix la llista en un contenidor Flexbox per poder posar els elements del menú en línia (un al costat de l'altre). */
+  gap: 32px; /* Afegeix un espai de 32 píxels entre cada element del menú ('li'). */
+}
+
+.element_menu { /* Estils per a cada element de la llista del menú ('li' dins de 'llista_menu'). Aquests són els links 'Inici', 'Botiga', 'Formulari'. */
+  position: relative; /* Estableix el posicionament relatiu. Això és crucial perquè un element posicionat de forma absoluta (com el subratllat '::after') es posicioni respecte a aquest element. */
+  padding: 8px 0; /* Afegeix 8 píxels d'espaiat a dalt i a baix de cada element del menú, sense espai als costats. */
+  font-weight: 600; /* Fa que el text de l'element del menú sigui una mica més gruixut que el text normal. */
+}
+
+.element_menu::after { /* Crea un 'pseudo-element' (un element que no existeix directament a l'HTML però que podem estilitzar amb CSS) DESPRÉS del contingut de cada '.element_menu'. L'utilitzarem per crear el subratllat animat. */
+  content: ''; /* Aquest pseudo-element no té text dins, d'aquí les cometes buides. */
+  position: absolute; /* Posiciona aquest pseudo-element de forma absoluta respecte al seu element pare més proper amb 'position: relative' (que és '.element_menu'). */
+  width: 0; /* Inicialment, l'ample del subratllat és zero, així no es veu. */
+  height: 2px; /* Li donem 2 píxels d'alçada, que serà el gruix del subratllat. */
+  bottom: 0; /* El posiciona a la part inferior de l'element pare. */
+  left: 0; /* El posiciona a l'esquerra de l'element pare. */
+  background: var(--color-destacat); /* El color del subratllat serà el color destacat (taronja). */
+  transition: var(--transicio); /* Aplica la transició suau perquè el subratllat aparegui animat. */
+}
+
+.element_menu:hover::after { /* Estils que s'apliquen al pseudo-element '::after' quan passes el ratolí per sobre de l'element del menú. */
+  width: 100%; /* Quan fas 'hover', l'ample del subratllat passa a ser el 100% de l'element pare, fent que aparegui completament. */
+}
+
+.boto_accedir { /* Estils per a l'enllaç amb la classe 'boto_accedir' (el botó 'Accedir' a la capçalera). */
+  background: var(--color-primari); /* El fons del botó és el color primari (verd fosc). */
+  color: #fff; /* El color del text dins del botó és blanc. */
+  padding: 13px 29px; /* Afegeix espaiat interior per donar la forma al botó. */
+  border-radius: 30px; /* Arrodoneix molt les cantonades per fer-lo semblar una píndola. */
+  font-weight: 600; /* Fa el text del botó més gruixut. */
+  transition: var(--transicio); /* Aplica la transició per als efectes de 'hover'. */
+  box-shadow: 0 4px 6px #0000001a; /* Afegeix una ombra lleugera sota el botó. */
+  margin-right: -15px;
+}
+
+.boto_accedir:hover { /* Estils per al botó 'Accedir' quan passes el ratolí per sobre. */
+  background: var(--color-secundari); /* Canvia el fons al color secundari (verd clar). */
+  transform: translateY(-2px); /* Mou el botó 2 píxels cap amunt. */
+  box-shadow: 0 6px 12px #00000026; /* Fa l'ombra més gran i una mica més visible. */
+}
+
+.seccio_principal { /* Estils per a la primera gran secció de la pàgina, la que té el vídeo de fons. */
+  position: relative; /* Necessari per poder posicionar altres elements (el vídeo, la capa transparent, el contingut) de forma absoluta dins d'aquesta secció. */
+  height: 1000px; /* Li dóna una alçada fixa de 1000 píxels. */
+  display: flex; /* Converteix la secció en un contenidor Flexbox. */
+  align-items: center; /* Centra els elements fills (el div amb el text i botons) verticalment dins de la secció. */
+  overflow: hidden; /* Amaga qualsevol part dels elements fills (com el vídeo) que es surti dels límits d'aquesta secció. */
+}
+
+#video_fons { /* Estils per a l'element 'video' amb l'ID 'video_fons'. */
+  position: absolute; /* Posiciona el vídeo de forma absoluta respecte a la seva secció pare amb 'position: relative'. */
+  top: 0; /* El col·loca a 0 píxels de la part superior de la secció. */
+  left: 0; /* El col·loca a 0 píxels de la part esquerra de la secció. */
+  width: 100%; /* Fa que el vídeo ocupi tot l'ample de la secció. */
+  height: 100%; /* Fa que el vídeo ocupi tota l'alçada de la secció. */
+  object-fit: cover; /* Important! Fa que el vídeo cobreixi tot l'espai sense deformar-se, retallant si cal. */
+  z-index: -1; /* Envia el vídeo cap enrere, darrere de la resta del contingut (la capa transparent i el text). */
+  /* background-image: linear-gradient(#00000080, #00000080), url('../img/vidlogin.mp4'); */ /* Aquesta línia està comentada i sembla que era un intent de posar una imatge de fons o un degradat, però el vídeo ja fa aquesta funció. */
+}
+
+.fons_transparent { /* Estils per al 'div' amb classe 'fons_transparent'. Aquest 'div' crea una capa fosca semitransparent sobre el vídeo per fer que el text blanc es llegeixi millor. */
+  position: absolute; /* Posiciona aquesta capa de forma absoluta respecte a la secció pare. */
+  top: 0; /* La col·loca a dalt. */
+  left: 0; /* La col·loca a l'esquerra. */
+  width: 100%; /* Ocupa tot l'ample de la secció. */
+  height: 100%; /* Ocupa tota l'alçada de la secció. */
+  background: linear-gradient(#00000066, #00000066); /* Crea un fons amb un degradat lineal. En aquest cas, el degradat va del mateix color a si mateix, amb transparència (el '66' és la transparència en hexadecimal). Això crea una capa fosca semitransparent. */
+  background-size: cover; /* Fa que el fons (la capa fosca) cobreixi tot l'espai de la secció. */
+  background-position: center; /* Centra el fons dins de la secció. */
+  z-index: 1; /* La posa per sobre del vídeo (z-index -1) però per sota del contingut principal (que tindrà un z-index més alt). */
+}
+
+.caixa_principal { /* Estils per al 'div' amb classe 'caixa_principal' dins de la secció principal. Aquest 'div' conté el títol gran, el subtítol i els dos botons. */
+  position: relative; /* Li donem 'position: relative' perquè pugui tenir un 'z-index'. */
+  z-index: 2; /* Ens assegurem que aquest contingut (el text i els botons) estigui per sobre de la capa transparent. */
+  text-align: center; /* Centra tot el text i els elements en línia o bloc dins d'aquest 'div'. */
+  color: #fff; /* El color de tot el text dins d'aquest 'div' és blanc. */
+}
+
+.titol1 { /* Estils per al títol principal 'h1' de la pàgina. */
+  font-size: clamp(40px, 5vw, 72px); /* La mida de la lletra s'ajusta automàticament: serà com a mínim 40px, idealment el 5% de l'ample de la finestra ('vw' vol dir 'viewport width'), i com a màxim 72px. Això fa el text 'responsive'. */
+  margin-bottom: 24px; /* Afegeix 24 píxels d'espai sota el títol. */
+  line-height: 1.2; /* Ajusta l'espai entre les línies si el títol ocupa més d'una línia. */
+}
+
+.text_important { /* Estils per a l'element 'span' amb classe 'text_important' dins del títol 1 ('conscient'). */
+  color: var(--color-destacat); /* Li dona el color destacat (taronja) per ressaltar-lo. */
+}
+
+.text_principal { /* Estils per al paràgraf sota el títol principal. */
+  font-size: 19px; /* Mida de la lletra. */
+  max-width: 600px; /* L'ample màxim d'aquest paràgraf serà de 600 píxels. Això millora la lectura en pantalles amples. */
+  margin: 0 auto 40px; /* Centra el paràgraf horitzontalment ('0 auto') i afegeix 40 píxels d'espai a la part de baix. */
+  opacity: 0.9; /* Fa que el text tingui una lleugera transparència (un 90% visible). */
+}
+
+.caixa_botons_principal { /* Estils per al 'div' que conté els dos botons grans de la secció principal. */
+  display: flex; /* Converteix-lo en un contenidor Flexbox per posar els botons en línia. */
+  gap: 24px; /* Afegeix 24 píxels d'espai entre els botons. */
+  flex-wrap: wrap; /* Si la pantalla és massa estreta i els botons no caben en una sola línia, aquesta propietat fa que passin a la següent línia automàticament. */
+  justify-content: center; /* Centra els botons horitzontalment dins d'aquest 'div'. */
+}
+
+.boto_botiga { /* Estils per al botó 'Descobreix la botiga'. */
+  background: var(--color-destacat); /* El fons és el color destacat (taronja). */
+  color: var(--color-text); /* El color del text és el gris fosc. */
+  padding: 16px 40px; /* Espaiat interior generós per fer el botó gran. */
+  border-radius: 50px; /* Arrodoneix molt les cantonades. */
+  font-weight: 600; /* Text en negreta. */
+  font-size: 18px; /* Mida de la lletra una mica més gran. */
+  transition: var(--transicio); /* Aplica la transició suau. */
+  box-shadow: 0 4px 15px #d4a37366; /* Afegeix una ombra amb el color destacat i transparència. */
+}
+
+.boto_botiga:hover { /* Estils per al botó de botiga quan fas 'hover'. */
+  background: #e6b17e; /* Canvia el fons a un taronja una mica diferent. */
+  transform: translateY(-3px); /* Mou el botó 3 píxels cap amunt. */
+  box-shadow: 0 8px 20px #d4a37399; /* Augmenta l'ombra. */
+}
+
+.boto_info { /* Estils per al botó 'Més informació ↓'. */
+  color: #fff; /* El text és blanc. */
+  padding: 16px 40px; /* Espaiat interior similar a l'altre botó. */
+  border: 2px solid #ffffff4d; /* Li posa una vora de 2 píxels de gruix, blanca i semitransparent. */
+  border-radius: 50px; /* Cantonades arrodonides. */
+  font-weight: 600; /* Text en negreta. */
+  transition: var(--transicio); /* Aplica la transició suau. */
+}
+
+.boto_info:hover { /* Estils per al botó d'informació quan fas 'hover'. */
+  background: #ffffff1a; /* Afegeix un fons blanc amb poca transparència. */
+  border-color: #fff; /* La vora es torna completament blanca. */
+}
+
+.caixa { /* Estils per al 'div' amb classe 'caixa'. Aquest 'div' s'utilitza en diverses seccions per centrar el contingut i donar-li un ample màxim. És molt útil per mantenir el disseny ordenat. */
+  max-width: 1200px; /* L'ample màxim d'aquest contenidor serà de 1200 píxels. */
+  margin: 0 auto; /* Centra el 'div' horitzontalment dins del seu contenidor pare. 'auto' als costats fa la feina. */
+  padding: 0 5%; /* Afegeix espaiat interior de 0 a dalt i baix, i un 5% de l'ample del pare als costats. Això assegura que el contingut no toqui els marges de la pantalla en dispositius petits. */
+}
+
+.graella { /* Estils base per als 'div' amb classe 'graella'. Indica que s'utilitzarà CSS Grid per organitzar elements interns. */
+  display: grid; /* Converteix el contenidor en una graella. */
+  gap: 24px; /* Afegeix un espai de 24 píxels entre els elements de la graella (tant verticalment com horitzontalment). */
+}
+
+.titol2 { /* Estils per als títols de nivell 2 ('h2') de les seccions ('El nostre procés', 'La nostra realitat'). */
+  font-size: clamp(32px, 4vw, 48px); /* Mida de lletra adaptable similar al títol 1. */
+  margin-bottom: 16px; /* Espai a sota del títol. */
+  text-align: center; /* Centra el text del títol. */
+  position: relative; /* Necessari perquè el pseudo-element '::after' (el subratllat) es posicioni respecte a aquest títol. */
+  padding-bottom: 16px; /* Afegeix espai a sota del text del títol per deixar lloc al subratllat. */
+}
+
+.text_subratllat { /* Estils per a l'element 'span' amb classe 'text_subratllat' dins dels títols 2 ('procés', 'realitat'). */
+  position: relative; /* Necessari perquè el pseudo-element '::after' es posicioni correctament. */
+}
+
+.text_subratllat::after { /* Crea un pseudo-element DESPRÉS del text subratllat. Aquest pseudo-element serà la línia del subratllat. */
+  content: ''; /* Contingut buit. */
+  position: absolute; /* Posiciona la línia de forma absoluta respecte a l'span pare. */
+  width: 100%; /* L'ample de la línia és el 100% de l'ample de l'span pare. */
+  height: 4px; /* El gruix de la línia és de 4 píxels. */
+  bottom: 0; /* La col·loca a la part inferior de l'span pare. */
+  left: 0; /* La col·loca a l'esquerra de l'span pare. */
+  background: var(--color-destacat); /* El color de la línia és el color destacat (taronja). */
+}
+
+.seccio_proces { /* Estils per a la secció 'El nostre procés'. */
+  background: var(--color-fons); /* El fons de la secció és el color de fons general. */
+  padding-top: 128px; /* Afegeix molt espai a dalt de la secció. */
+  padding-bottom: 96px; /* Afegeix espai a baix de la secció. */
+}
+
+.graella_proces { /* Estils per al 'div' amb classe 'graella_proces'. Conté les 3 caixes amb els passos del procés. */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Defineix les columnes de la graella. 'repeat(auto-fit, ...)' crea tantes columnes com caben. 'minmax(250px, 1fr)' fa que cada columna tingui com a mínim 250 píxels d'ample i ocupi la part igualitària de l'espai disponible (1fr). */
+  align-items: start; /* Alinea els elements de la graella (les caixes) a la part superior de cada cel·la. */
+  position: relative; /* Necessari perquè el pseudo-element '::before' (la línia horitzontal) es posicioni respecte a aquesta graella. */
+  margin-top: 64px; /* Afegeix espai a dalt de la graella. */
+}
+
+.graella_proces::before { /* Crea un pseudo-element ABANS del contingut de la graella del procés. Aquest serà la línia horitzontal que uneix els cercles numerats. */
+  content: ''; /* Contingut buit. */
+  position: absolute; /* Posiciona la línia de forma absoluta respecte a la graella pare. */
+  top: 50%; /* La col·loca al mig verticalment (al 50% de l'alçada de la graella). */
+  left: 0; /* La col·loca a l'esquerra. */
+  width: 100%; /* L'ample és el 100% de la graella. */
+  height: 3px; /* El gruix de la línia. */
+  background: var(--color-terciari); /* El color de la línia és el color terciari (verd clar). */
+  z-index: 1; /* La posa per sota de les caixes del procés (que tenen z-index 2). */
+}
+
+.caixa_proces { /* Estils per a cada 'article' dins de la graella del procés. Són les caixes individuals per a cada pas. */
+  text-align: center; /* Centra tot el text i els elements dins de la caixa. */
+  position: relative; /* Li donem 'position: relative' perquè pugui tenir un 'z-index'. */
+  z-index: 2; /* Ens assegurem que les caixes estiguin per sobre de la línia horitzontal del procés. */
+  padding: 24px; /* Afegeix espaiat interior a tots els costats de la caixa. */
+}
+
+.numero_proces { /* Estils per al 'div' amb classe 'numero_proces'. Aquest 'div' és el cercle que conté el número de cada pas. */
+  width: 70px; /* Ample fix de 70 píxels. */
+  height: 70px; /* Alçada fixa de 70 píxels. */
+  background: var(--color-destacat); /* El fons del cercle és el color destacat (taronja). */
+  color: #fff; /* El color del número dins del cercle és blanc. */
+  border-radius: 50%; /* En fer que el radi de la vora sigui el 50% de l'ample/alt, si l'ample i l'alt són iguals, es crea un cercle. */
+  display: flex; /* Converteix-lo en un contenidor Flexbox. */
+  align-items: center; /* Centra verticalment el contingut (el número) dins del cercle. */
+  justify-content: center; /* Centra horitzontalment el contingut (el número) dins del cercle. */
+  font-size: 29px; /* Mida de la lletra del número. */
+  font-weight: bold; /* El número en negreta. */
+  margin: 0 auto 24px; /* Centra el cercle horitzontalment i afegeix 24 píxels d'espai a la part de baix. */
+  box-shadow: 0 5px 15px #d4a37380; /* Afegeix una ombra al cercle amb el color destacat i transparència. */
+}
+
+.seccio_imatges { /* Estils per a la secció 'La nostra realitat', la que té les tres imatges grans. */
+  background: #fff; /* El fons de la secció és blanc. */
+  padding-top: 96px; /* Espaiat a dalt. */
+  padding-bottom: 128px; /* Espaiat a baix. */
+}
+
+.graella_imatges { /* Estils per al 'div' amb classe 'graella_imatges'. És el contenidor que organitza les imatges en una graella. */
+  grid-template-columns: repeat(3, 1fr); /* Defineix 3 columnes. '1fr' vol dir que cada columna ocupa una part igualitària de l'espai disponible. Així les 3 columnes s'adaptaran per omplir l'ample. */
+  grid-auto-rows: 300px; /* Totes les files d'aquesta graella tindran una alçada automàtica de 300 píxels. */
+  margin-top: 48px; /* Espai a dalt de la graella. */
+}
+
+.caixa_imatge { /* Estils per a cada 'figure' amb classe 'caixa_imatge'. És el contenidor de cada imatge dins de la graella. */
+  border-radius: 15px; /* Arrodoneix les cantonades de la caixa de la imatge. */
+  overflow: hidden; /* Qualsevol contingut (la imatge) que surti dels límits d'aquesta caixa amb les cantonades arrodonides quedarà amagat. */
+  position: relative; /* Necessari per a l'efecte de 'hover' de la imatge dins seu. */
+  box-shadow: var(--ombra-card); /* Aplica l'ombra predefinida que vam guardar a la variable. */
+}
+
+.caixa_imatge img { /* Estils per a l'element 'img' (la imatge) DINS de la caixa '.caixa_imatge'. */
+  width: 100%; /* L'ample de la imatge ocupa el 100% de l'ample de la seva caixa pare. */
+  height: 100%; /* L'alçada de la imatge ocupa el 100% de l'alçada de la seva caixa pare. */
+  object-fit: cover; /* Fa que la imatge cobreixi tot l'espai de la caixa sense distorsionar-se, retallant si cal per ajustar-se. */
+  transition: transform 0.5s ease; /* Aplica una transició suau de 0.5 segons a la propietat 'transform
+}
+
+.caixa_imatge:hover img { /* Estils per a la imatge dins de la caixa quan passes el ratolí per sobre de la caixa. */
+transform: scale(1.05); /* Fa que la imatge es faci un 5% més gran quan fas 'hover', creant un efecte de zoom subtil. */
+}
+
+.part_inferior { /* Estils per a l'element 'footer' (el peu de pàgina), que té la classe 'part_inferior'. */
+  background: var(--color-primari); /* El fons del peu de pàgina és el color primari (el verd fosc). */
+  color: #fff; /* El color de tot el text dins del peu de pàgina és blanc. */
+  padding: 64px 0 32px; /* Afegeix 64 píxels d'espai a dalt, 0 als costats, i 32 píxels a baix. */
+}
+
+.graella_inferior { /* Estils per al 'div' amb classe 'graella_inferior' dins del peu de pàgina. Conté les columnes d'informació (logo, horari, contacte). */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Defineix les columnes de la graella. S'adapten automàticament, amb un mínim de 250 píxels i ocupant l'espai disponible. Això fa que les columnes es posin en fila en pantalles amples i s'apilin en pantalles estretes. */
+  margin-bottom: 48px; /* Afegeix 48 píxels d'espai sota aquesta graella de columnes. */
+}
+
+.columna_inferior h3 { /* Estils per als títols 'h3' que estan dins d'un 'div' amb classe 'columna_inferior' (els títols 'Horari' i 'Contacte' del peu de pàgina). */
+  color: var(--color-destacat); /* El color d'aquests títols és el color destacat (taronja). */
+  margin-bottom: 24px; /* Afegeix 24 píxels d'espai sota cada títol de columna. */
+  font-size: 21px; /* Mida de la lletra per a aquests títols. */
+}
+
+.logo_inferior { /* Estils per a la imatge del logo que es troba al peu de pàgina. */
+  height: 70px; /* Li dóna una alçada fixa de 70 píxels. */
+  margin-bottom: 24px; /* Afegeix 24 píxels d'espai sota el logo. */
+}
+
+.xarxes-socials { /* Estils per al 'div' que conté les icones de les xarxes socials al peu de pàgina. */
+  display: flex; /* Converteix-lo en un contenidor Flexbox per posar les icones en línia. */
+  gap: 16px; /* Afegeix 16 píxels d'espai entre cada icona de xarxa social. */
+  margin-top: 24px; /* Afegeix 24 píxels d'espai a dalt d'aquest bloc d'icones. */
+}
+
+.xarxes-socials img { /* Estils per a cada imatge ('img') dins del 'div' de xarxes socials. */
+  height: 30px; /* Alçada fixa de 30 píxels per a cada icona. */
+  opacity: 0.8; /* Les icones per defecte tenen una lleugera transparència (80% visibles). */
+  transition: var(--transicio); /* Aplica la transició suau per als efectes de 'hover'. */
+}
+
+.xarxes-socials img:hover { /* Estils per a les icones de xarxes socials quan hi passes el ratolí per sobre. */
+  opacity: 1; /* Quan fas 'hover', la icona es torna completament opaca (100% visible). */
+  transform: translateY(-3px); /* Mou la icona 3 píxels cap amunt. */
+}
+
+.text_drets { /* Estils per al paràgraf amb la classe 'text_drets' (el text de copyright al final del peu de pàgina). */
+  text-align: center; /* Centra el text de copyright. */
+  padding-top: 32px; /* Afegeix 32 píxels d'espai a dalt del text. */
+  border-top: 1px solid #ffffff1a; /* Afegeix una línia fina de 1 píxel a la part de dalt, de color blanc amb una mica de transparència. */
+  font-size: 14px; /* Mida de la lletra una mica més petita per al text de copyright. */
+}
+
+.selector-idioma { /* Estils per al 'div' que conté les banderes per canviar l'idioma a la capçalera. */
+  position: absolute; /* or 'fixed' if you want it to stay there when scrolling */ /* Posiciona aquest element de forma absoluta (respecte al seu pare posicionat, que és la capçalera fixa) o bé 'fixed' si volguessis que es quedés a la mateixa posició de la pantalla encara que la capçalera no fos fixa. Aquí, com la capçalera és fixa, l'absolut respecte a ella funciona bé per mantenir-lo a dalt a la dreta de la capçalera. */
+  top: 10px; /* Adjust as needed */ /* El col·loca a 10 píxels de distància de la part superior de la capçalera (pots ajustar aquest valor). */
+  right: 10px; /* Adjust as needed */ /* El col·loca a 10 píxels de distància de la part dreta de la capçalera (pots ajustar aquest valor). */
+  display: flex; /* Converteix-lo en un contenidor Flexbox per posar les banderes en línia. */
+  align-items: center; /* Centra les banderes verticalment dins d'aquest contenidor. */
+  gap: 10px; /* Adjust the space between flags as you like */ /* Afegeix 10 píxels d'espai entre cada bandera (pots ajustar aquest espai). */
+  z-index: 100; /* Ensure it's above other content */ /* Li dóna un 'z-index' alt per assegurar que les banderes sempre es vegin per sobre d'altres elements de la pàgina. */
+}
+
+.bandera { /* Estils per a les imatges de les banderes dins del selector d'idioma. */
+  width: 30px; /* Adjust flag size as you like */ /* Estableix l'ample de cada bandera a 30 píxels (pots canviar la mida si vols). */
+  height: auto; /* L'alçada s'ajusta automàticament per mantenir les proporcions de la imatge de la bandera. */
+  margin-right: 5px; /* Space to the right of the flag if needed */ /* Afegeix 5 píxels d'espai a la dreta de cada bandera (si cal separar-les una mica més de l'element següent). */
+  transition: transform 0.3s ease; /* Smooth transition on hover */ /* Aplica una transició suau de 0.3 segons a la propietat 'transform' per a l'efecte de 'hover'. */
+}
+
+.bandera:hover { /* Estils per a les banderes quan hi passes el ratolí per sobre. */
+  transform: scale(1.1); /* Make the flag slightly larger on hover */ /* Fa que la bandera es faci un 10% més gran quan fas 'hover'. */
+}
+
+/* Estils del carret de compra - Aquesta secció defineix l'aparença i el comportament de la icona del carret i el seu comptador */
+.carret-compra { /* Contenidor principal de la icona del carret */
+    display: flex;              /* Utilitza flexbox per alinear els elements interns */
+    align-items: center;        /* Centra verticalment els elements dins del contenidor */
+    margin-left: 20px;          /* Espai a l'esquerra per separar-lo d'altres elements */
+    position: relative;         /* Necessari per posicionar el comptador de manera absoluta */
+    cursor: pointer;            /* Canvia el cursor a una mà quan passem per sobre */
+    padding: 12px;              /* Espaiat interior per fer la icona més gran i clicable */
+    border-radius: 50%;         /* Fa que el contenidor sigui rodó */
+    background: var(--color-destacat); /* Color de fons utilitzant la variable definida */
+    transition: all 0.3s ease;  /* Transició suau per a tots els canvis d'estil */
+    transform: translateX(5px); /* Mou lleugerament la icona cap a la dreta */
+}
+
+.carret-compra:hover { /* Estils quan passem el ratolí per sobre del carret */
+    transform: translateX(5px) translateY(-2px); /* Mou la icona cap amunt i manté el desplaçament horitzontal */
+    background: #c4966a;        /* Canvia el color de fons a un to més fosc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Afegeix una ombra suau per donar profunditat */
+}
+
+.carret-compra svg { /* Estils per a la icona SVG del carret */
+    width: 24px;               /* Amplada fixa de la icona */
+    height: 24px;              /* Alçada fixa de la icona */
+    fill: white;               /* Color blanc per a la icona */
+}
+
+.contador-carret { /* Estils per al comptador numèric del carret */
+    position: absolute;        /* Posicionament absolut respecte al contenidor del carret */
+    top: -8px;                /* Desplaçament cap amunt des de la vora superior */
+    right: -8px;              /* Desplaçament cap a la dreta des de la vora dreta */
+    background-color: var(--color-primari); /* Color de fons utilitzant la variable definida */
+    color: white;             /* Color blanc per al text */
+    font-size: 12px;          /* Mida petita per al número */
+    font-weight: bold;        /* Text en negreta per millor visibilitat */
+    min-width: 20px;          /* Amplada mínima per assegurar que és rodó fins i tot amb números grans */
+    height: 20px;             /* Alçada fixa per mantenir la forma circular */
+    border-radius: 50%;       /* Fa que el comptador sigui rodó */
+    display: flex;            /* Utilitza flexbox per centrar el número */
+    align-items: center;      /* Centra verticalment el número */
+    justify-content: center;  /* Centra horitzontalment el número */
+    padding: 0 4px;           /* Petit espaiat horitzontal per números més grans */
+    border: 2px solid white;  /* Vora blanca per destacar del fons */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombra suau per donar profunditat */
+}
+
+/* Ajustaments addicionals per al menú de navegació */
+.llista_menu { /* Estils per a la llista d'elements del menú */
+    display: flex;           /* Utilitza flexbox per alinear els elements en horitzontal */
+    align-items: center;     /* Centra verticalment tots els elements del menú */
+    gap: 32px;              /* Espai uniforme entre els elements del menú */
+}

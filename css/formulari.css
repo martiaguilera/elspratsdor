@@ -1,0 +1,187 @@
+:root { /* Aquí declarem uns quants colors perquè sigui més fàcil fer servir la mateixa paleta a tot arreu */
+  --color-primari: #3a5a40; /* El color verd fosc principal */
+  --color-secundari: #588157; /* Un verd una mica més clar, per donar varietat */
+  --color-terciari: #a3b18a; /* Aquest és el verd més suau */
+  --color-fons: #f8f9fa; /* El color de fons, molt claret */
+  --color-text: #2b2d42; /* El color per defecte del text, bastant fosc */
+  --color-destacat: #d4a373; /* Aquest taronja és pels botons i detalls que volem que es notin */
+}
+
+body { /* Estil bàsic per a tot el text de la pàgina */
+  font-family: 'Montserrat', sans-serif; /* Fem servir aquesta font perquè queda moderna i llegible */
+}
+
+.formulari { /* Aquest és el bloc que conté tot el formulari */
+  max-width: 600px; /* No deixem que sigui massa ample, així queda millor a la pantalla */
+  margin: 40px auto; /* El centrem i li donem aire per dalt i baix */
+  padding: 30px; /* Espai a dins perquè no quedi tot enganxat als marges */
+  background-color: white; /* Fons blanc perquè tot es vegi net */
+  border-radius: 12px; /* Cantonades arrodonides, que sempre queda més xulo */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Una ombra suau per donar sensació de profunditat */
+}
+
+.formulari label { /* Etiquetes dels camps */
+  display: block; /* Cada etiqueta a la seva pròpia línia */
+  margin-bottom: 8px; /* Una mica d'espai sota cada etiqueta */
+  color: var(--color-primari); /* Les pintem amb el verd principal */
+  font-weight: 600; /* Una mica més gruixudes per destacar-les */
+}
+
+.formulari input[type="text"],
+.formulari input[type="email"],
+.formulari textarea { /* Camps de text i àrea de text */
+  width: 100%; /* Que ocupin tot l’ample disponible */
+  display: block; /* Cada camp a la seva pròpia línia */
+  margin-bottom: 20px; /* Separació entre camps perquè respirin */
+  padding: 12px; /* Una mica d'espai dins de cada camp */
+  border: 2px solid #e0e0e0; /* Una vora gris clar, que no molesta */
+  background-color: var(--color-fons); /* Fons gris molt suau */
+  border-radius: 8px; /* Cantonades arrodonides */
+  box-sizing: border-box; /* Això va bé per evitar sorpreses amb l’ample */
+  transition: border-color 0.3s ease; /* Que el canvi de color sigui suau quan hi cliques */
+}
+
+.formulari input[type="text"]:focus,
+.formulari input[type="email"]:focus,
+.formulari textarea:focus { /* Quan seleccionem un camp */
+  outline: none; /* Treiem el contorn lleig del navegador */
+  border-color: var(--color-secundari); /* Vora amb el verd secundari perquè es vegi actiu */
+  background-color: white; /* El fons es posa blanc per destacar encara més */
+}
+
+.formulari textarea { /* L’àrea gran per escriure missatges */
+  height: 150px; /* Posem una alçada decent d’entrada */
+  resize: vertical; /* Permetem que s’estiri només cap amunt i avall */
+}
+
+.formulari button[type="submit"] { /* El botó d’enviar el formulari */
+  background-color: var(--color-destacat); /* Taronja que crida l’atenció */
+  padding: 12px 25px; /* Bona mida perquè sigui còmode de clicar */
+  color: white; /* Text blanc perquè es llegeixi bé sobre el taronja */
+  border: none; /* Sense vora, estil net */
+  border-radius: 8px; /* També arrodonit, per coherència */
+  font-weight: 600; /* Lletres una mica més gruixudes */
+  cursor: pointer; /* Que sembli clicable */
+  transition: background-color 0.3s ease; /* Canvi de color suau quan hi passem el ratolí */
+}
+
+.formulari button[type="submit"]:hover { /* Quan passes el ratolí pel damunt del botó */
+  background-color: #c4966a; /* El taronja es fa una mica més fosc */
+  transform: translateY(-1px); /* S’aixeca una miqueta, com si flotés */
+}
+
+.formulari input[type="number"],
+.formulari input[type="date"],
+.formulari select { /* Camps numèrics, dates i desplegables */
+  width: 100%; /* Que ocupin tot l’ample */
+  display: block; /* Un a cada línia */
+  margin-bottom: 20px; /* Espai entre ells */
+  padding: 12px; /* Espai intern per escriure-hi còmodament */
+  border: 2px solid #e0e0e0; /* Vora suau */
+  background-color: var(--color-fons); /* Fons gris suau */
+  border-radius: 8px; /* Cantonades arrodonides, ja que queda millor */
+  box-sizing: border-box; /* Per controlar l’ample correctament */
+  transition: border-color 0.3s ease; /* Canvi suau de color */
+}
+
+.formulari input[type="number"]:focus,
+.formulari input[type="date"]:focus,
+.formulari select:focus { /* Quan algun d’aquests camps està seleccionat */
+  outline: none; /* Fora el contorn predeterminat */
+  border-color: var(--color-secundari); /* Vora verd secundari per veure-ho clarament */
+  background-color: white; /* El fons també es posa blanc */
+}
+
+.formulari div { /* Per cada bloc/div a dins del formulari */
+  margin-bottom: 20px; /* Deixem aire perquè tot quedi separat */
+}
+
+.botons { /* Contenidor pels botons d'enviar i netejar */
+  display: flex; /* Els posem en línia horitzontal */
+  gap: 15px; /* Separem els botons entre si */
+  justify-content: flex-start; /* Comencen alineats a l’esquerra */
+  margin-top: 30px; /* Espai superior abans dels botons */
+}
+
+.boto-submit,
+.boto-clear { /* Botons d’enviar i netejar */
+  padding: 12px 25px; /* Bona mida, còmode de prémer */
+  border: none; /* Sense vora, estil més modern */
+  border-radius: 8px; /* Seguim amb les cantonades arrodonides */
+  font-weight: 600; /* Lletres ben visibles */
+  cursor: pointer; /* Que es noti que es pot clicar */
+  transition: all 0.3s ease; /* Tots els canvis amb transició suau */
+}
+
+.boto-submit { /* Botó principal per enviar */
+  background-color: var(--color-destacat); /* Taronja de la nostra paleta */
+  color: white; /* Text blanc perquè ressalti */
+}
+
+.boto-clear { /* Botó per esborrar els camps del formulari */
+  background-color: #e0e0e0; /* Gris clar per no destacar tant */
+  color: var(--color-text); /* Text amb el color principal */
+}
+
+.boto-submit:hover { /* Efecte hover del botó d’enviar */
+  background-color: #c4966a; /* Es fa un taronja més fosc */
+  transform: translateY(-1px); /* L’aixequem lleugerament */
+}
+
+.boto-clear:hover { /* Efecte hover del botó d’esborrar */
+  background-color: #d0d0d0; /* Una mica més fosc que el gris normal */
+  transform: translateY(-1px); /* També s’aixeca una mica */
+}
+
+.message { /* Missatges de feedback (èxit o error) */
+  max-width: 600px; /* Màxim d’ample, igual que el formulari */
+  margin: 20px auto; /* Centrat i amb aire per sobre i sota */
+  padding: 15px; /* Espai intern perquè sigui llegible */
+  border-radius: 8px; /* Cantonades arrodonides */
+  font-weight: 500; /* Text més marcat */
+}
+
+.success { /* Missatge de formulari correcte */
+  background-color: #d4edda; /* Verd clar de fons */
+  color: #155724; /* Text verd fosc */
+  border: 1px solid #c3e6cb; /* Vora una mica més marcada */
+}
+
+.error { /* Missatge d’error */
+  background-color: #f8d7da; /* Vermell clar de fons */
+  color: #721c24; /* Text vermell fosc */
+  border: 1px solid #f5c6cb; /* Vora vermella suau */
+}
+
+/* Estils per la validació del formulari */
+.missatge-validacio {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 0.8em;
+    transition: all 0.3s ease;
+}
+
+.missatge-validacio.valid {
+    color: #4CAF50;
+}
+
+.missatge-validacio.invalid {
+    color: #f44336;
+}
+
+/* Estils per als camps segons l'estat de validació */
+.formulari input:focus,
+.formulari select:focus {
+    outline: none;
+    border-color: var(--color-secundari);
+}
+
+.formulari input.valid,
+.formulari select.valid {
+    border-color: #4CAF50;
+}
+
+.formulari input.invalid,
+.formulari select.invalid {
+    border-color: #f44336;
+}

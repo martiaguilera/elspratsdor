@@ -1,0 +1,159 @@
+:root {
+    --color-primari: #2e4d35;
+    --color-secundari: #4a7043;
+    --color-fons: #f9fafb;
+    --color-text: #1f2a44;
+    --color-destacat: #c89b5f;
+    --transicio: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-fons);
+}
+
+main {
+    margin-top: 100px;
+    padding: 2rem;
+}
+
+.seccio_botiga {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.text_principal {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.8;
+}
+
+/* Estils eliminats i substituïts pels nous product-card */
+
+.product-image-container {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.product-card.hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-info {
+    text-align: center;
+    padding: 1rem;
+}
+
+.product-type {
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.product-price {
+    color: var(--color-primari);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.product-stock {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.boto_comprar {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    background: var(--color-destacat);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: var(--transicio);
+}
+
+.boto_comprar:hover {
+    background: var(--color-secundari);
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.categoria {
+    display: inline-block; /* Poden estar a la mateixa línia */
+    margin-top: 1rem; /* Marge superior */
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-primari);
+    border-radius: 4px;
+    color: var(--color-primari);
+    text-decoration: none;
+    transition: all 0.3s ease; /* Afegim la transició suau */
+}
+
+.categoria:hover {
+    background-color: var(--color-primari);
+    color: white;
+}
+
+.boto-tornar {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    background-color: var(--color-primari);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.boto-tornar:hover {
+    background-color: var(--color-secundari);
+}

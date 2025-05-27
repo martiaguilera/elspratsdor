@@ -1,0 +1,222 @@
+.seccio_consultes { /* La secció on mostrem totes les consultes */
+    padding: 2rem 0; /* Espai per dalt i baix perquè no quedi enganxat */
+}
+
+.selector-container { /* Contenidor del selector de consultes */
+    margin-bottom: 1.5rem; /* Una mica d’aire a sota, que es vegi separat */
+}
+
+#consultaSelector { /* El desplegable per escollir consulta */
+    width: 100%; /* Que ocupi tot l’ample possible */
+    max-width: 500px; /* Però sense passar-se de gran */
+    padding: 0.5rem; /* Que sigui còmode de clicar */
+    font-size: 1rem; /* Text ni molt gran ni molt petit */
+    border: 1px solid #ccc; /* Vora gris clar, sense molestar */
+    border-radius: 4px; /* Arrodonim una mica les cantonades */
+}
+
+.cerca-container { /* On posem el buscador i el botó de cerca */
+    display: flex; /* Els posem en línia, costat per costat */
+    gap: 1rem; /* Separem una mica els elements */
+    margin-bottom: 1.5rem; /* I deixem espai a sota */
+    max-width: 500px; /* Perquè no sigui massa ample a pantalles grans */
+}
+
+.cerca-input { /* El camp per escriure què vols buscar */
+    flex: 1; /* Que ocupi tot l’espai possible */
+    padding: 0.5rem; /* Espai dins per escriure còmodament */
+    font-size: 1rem; /* Mida de lletra estàndard */
+    border: 1px solid #ccc; /* Vora gris suau */
+    border-radius: 4px; /* Cantonades suaus */
+}
+
+.cerca-button { /* El botó per fer la cerca */
+    padding: 0.5rem 1rem; /* Mida còmoda de clicar */
+    font-size: 1rem; /* Text clar i llegible */
+    background-color: #4CAF50; /* Verd perquè cridi l’atenció */
+    color: white; /* Text blanc perquè es vegi bé */
+    border: none; /* Sense vora */
+    border-radius: 4px; /* Cantonades arrodonides */
+    cursor: pointer; /* Cursor de mà, perquè sapiguis que es pot clicar */
+    transition: background-color 0.3s; /* Canvi suau de color quan passes per sobre */
+}
+
+.cerca-button:hover { /* Quan passes el ratolí pel botó de cerca */
+    background-color: #45a049; /* Un verd una mica més fosc */
+}
+
+.result-message { /* Missatges d’error o d’èxit que surten al buscar */
+    padding: 1rem; /* Espai dins del missatge */
+    margin: 1rem 0; /* Aire abans i després */
+    background-color: #f8f9fa; /* Fons molt clar, quasi blanc */
+    border: 1px solid #dee2e6; /* Vora subtil */
+    border-radius: 4px; /* Una mica rodó */
+}
+
+table { /* Taula on mostrem les dades de les consultes */
+    width: 100%; /* Que ocupi tot l’ample */
+    border-collapse: collapse; /* Sense espais entre cel·les */
+    margin: 1rem 0; /* Aire a sobre i sota la taula */
+    background-color: white; /* Fons blanc, tot net */
+}
+
+th, td { /* Cel·les i encapçalaments de la taula */
+    padding: 0.75rem; /* Que no quedi el text enganxat */
+    text-align: left; /* Text alineat a l’esquerra, fàcil de llegir */
+    border: 1px solid #dee2e6; /* Ratlles suaus entre cel·les */
+}
+
+th { /* Encapsalaments de la taula */
+    background-color: #f8f9fa; /* Fons gris suau per diferenciar-los */
+    font-weight: 600; /* Lletres una mica més gruixudes */
+}
+
+tr:nth-child(even) { /* Files parells de la taula */
+    background-color: #f8f9fa; /* Les pintem una mica diferents perquè sigui més fàcil seguir les files */
+}
+
+tr:hover { /* Quan passes el ratolí per sobre d’una fila */
+    background-color: #f2f2f2; /* Es destaca perquè vegis per on vas */
+}
+
+.caixa { /* Contenidor general de la pàgina */
+    max-width: 1200px; /* No deixem que sigui massa ample */
+    margin: 0 auto; /* El centrem a la pàgina */
+    padding: 0 5%; /* Espai pels costats, sobretot en pantalles petites */
+}
+
+.selector-container { /* Contenidor dels selectors (repetit, però bé) */
+    margin: 2rem 0; /* Més aire a dalt i a baix */
+}
+
+select { /* Els desplegables de la pàgina */
+    padding: 12px 16px; /* Bona mida per clicar i llegir */
+    font-size: 16px; /* Lletra prou gran */
+    width: 100%; /* Que ocupi tot l’espai disponible */
+    max-width: 600px; /* Però sense passar-se */
+    margin-bottom: 1rem; /* Espai sota cada select */
+    border: 2px solid #e0e0e0; /* Vora molt suau */
+    border-radius: 8px; /* Cantonades arrodonides */
+    background-color: var(--color-fons); /* Fons gris claret */
+    transition: border-color 0.3s ease; /* Canvi suau de color */
+}
+
+select:focus { /* Quan tens el select seleccionat */
+    border-color: var(--color-destacat); /* Vora taronja, que es noti */
+    outline: none; /* Fora el contorn que posa el navegador */
+}
+
+table { /* Una altra vegada, la taula: aquí amb alguns detalls extra */
+    width: 100%; /* Tot l’ample */
+    border-collapse: collapse; /* Sense espai entre cel·les */
+    margin-top: 1rem; /* Aire a dalt */
+    background-color: white; /* Fons blanc net */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombra suau per “elevar” la taula */
+    border-radius: 8px; /* Cantonades rodones */
+    overflow: hidden; /* Per si hi ha cantonades rodones, que no surti res */
+}
+
+th, td { /* Cel·les de la taula, versió detallada */
+    border: 1px solid #ddd; /* Ratlles més suaus */
+    padding: 12px 16px; /* Més espai que abans */
+    text-align: left; /* Sempre alineat a l’esquerra */
+}
+
+th { /* Capçalera de la taula (detallada) */
+    background-color: var(--color-primari); /* Ara fons verd fosc, per cridar més l’atenció */
+    color: white; /* Lletres blanques */
+    font-weight: 600; /* Lletres marcades */
+}
+
+tr:nth-child(even) { /* Files parells (detallat) */
+    background-color: #f9f9f9; /* Gairebé blanc, subtil però útil per llegir millor */
+}
+
+tr:hover { /* Efecte de passar el ratolí per sobre */
+    background-color: #f5f5f5; /* Canvi suau perquè vegis on ets */
+}
+
+.result-message { /* Missatge de resultat, versió detallada */
+    padding: 1rem; /* Espaiat per dins */
+    margin: 1rem 0; /* Espaiat per fora */
+    border-radius: 8px; /* Cantonades rodones */
+    background-color: #f8f9fa; /* Fons clar */
+    border: 1px solid #ddd; /* Vora molt suau */
+    color: var(--color-text); /* Text amb el color principal */
+}
+
+h1 { /* Títols principals de la pàgina */
+    color: var(--color-primari); /* El verd principal, que es noti */
+    margin-bottom: 1.5rem; /* Espai a sota, així respira */
+}
+
+/* Cart styles */
+.carret-compra { /* Icona del carret de compra */
+    display: flex; /* Posem tot a una línia */
+    align-items: center; /* Centrat verticalment */
+    position: relative; /* Per poder posar el número de productes a sobre */
+    cursor: pointer; /* Que es vegi que es pot clicar */
+    padding: 12px; /* Espai al voltant de la icona */
+    border-radius: 50%; /* Fa la icona rodona */
+    background: var(--color-destacat); /* Fons taronja destacat */
+    transition: all 0.3s ease; /* Canvis suaus en hover */
+    transform: translateX(5px); /* Una mica cap a la dreta, perquè sí */
+}
+
+.carret-compra:hover { /* Quan passes pel damunt del carret */
+    transform: translateX(5px) translateY(-2px); /* Es mou una mica i s’aixeca */
+    background: #c4966a; /* El fons es fa una mica més fosc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra extra per efecte “pop” */
+}
+
+.carret-compra svg { /* El dibuix del carret en si (SVG) */
+    width: 24px; /* Mida estàndard */
+    height: 24px;
+    fill: white; /* Pintem el carret de blanc */
+}
+
+.contador-carret { /* El número de productes al carret, a sobre la icona */
+    position: absolute; /* Per posar-lo a sobre del carret */
+    top: -8px; /* Amunt del tot */
+    right: -8px; /* I una mica a la dreta */
+    background-color: var(--color-primari); /* Verd fosc */
+    color: white; /* Text blanc */
+    font-size: 12px; /* Petit però llegible */
+    font-weight: bold; /* Que es vegi bé */
+    min-width: 20px; /* Sempre 20px d’ample com a mínim */
+    height: 20px; /* 20px d’alt per fer-lo rodó */
+    border-radius: 50%; /* Totalment rodó */
+    display: flex; /* Per centrar el número dins la bola */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease; /* Efecte suau si canvies */
+}
+
+.cerca-container { /* Tornem al contenidor de la cerca, versió alternativa */
+    margin-bottom: 20px; /* Aire a sota */
+    display: flex; /* Els posem en línia */
+    gap: 10px; /* Espai entre input i botó */
+    align-items: center; /* Tot ben centrat verticalment */
+}
+
+.cerca-container input { /* El camp de buscar, dins del contenidor */
+    flex: 1; /* Ocupa tot l’espai lliure */
+    padding: 8px; /* Que sigui còmode */
+    border: 1px solid #ccc; /* Vora suau */
+    border-radius: 4px; /* Una mica rodó */
+    font-size: 16px; /* Text ben llegible */
+}
+
+.cerca-container button { /* Botó de buscar, dins del contenidor */
+    padding: 8px 16px; /* Bona mida per clicar */
+    background-color: #4CAF50; /* Verd viu */
+    color: white; /* Text blanc */
+    border: none; /* Sense vora */
+    border-radius: 4px; /* Cantonades rodonetes */
+    cursor: pointer; /* Que es noti que es pot clicar */
+    font-size: 16px; /* Text ben clar */
+}
+
+.cerca-container button:hover { /* Quan passes el ratolí pel botó */
+    background-color: #45a049; /* Es fa un verd més fosc, efecte visual */
+}

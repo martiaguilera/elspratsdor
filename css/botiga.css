@@ -1,0 +1,331 @@
+/* Variables CSS que farem servir per mantenir la coherència del disseny */
+:root {
+  --color-primari: #3a5a40; /* Un verd fosc */
+  --color-secundari: #588157; /* Un verd una mica més clar */
+  --color-fons: #f8f9fa; /* Un color de fons molt clar */
+  --color-text: #2b2d42; /* Un gris fosc, gairebé negre, per al text */
+  --color-destacat: #d4a373; /* Un color taronja que destaca */
+  --transicio: all 0.3s ease; /* Una transició suau per als efectes */
+}
+
+/* Estils bàsics per a tots els elements */
+* {
+  margin: 0; /* Eliminem els marges per defecte */
+  padding: 0; /* Eliminem els espais interiors per defecte */
+  box-sizing: border-box; /* Fem que el padding i els bordes estiguin inclosos dins l'ample */
+}
+
+/* Estils generals per al cos de la pàgina */
+body {
+  font-family: 'Montserrat', sans-serif; /* Definim la lletra per a tot el text */
+  color: var(--color-text); /* Utilitzem la variable pel color del text */
+  background-color: var(--color-fons); /* Utilitzem la variable pel color de fons */
+}
+
+/* Estils per al 'main', el contingut principal */
+main {
+  margin-top: 100px; /* Separem el main de la capçalera */
+  padding: 2rem; /* Afegim espai interior als costats */
+}
+
+/* Estils per a la secció de la botiga */
+.seccio_botiga {
+  text-align: center; /* Centrem el text dins la secció */
+  margin-bottom: 4rem; /* Afegim un marge inferior */
+}
+
+/* Estils per a la secció del carret */
+.seccio_carret {
+    padding: 2rem;
+    margin-top: 80px;
+}
+
+/* Estils per als títols principals (h1) */
+h1 {
+  font-size: 3rem; /* Fem el text gran */
+  margin-bottom: 1rem; /* Donem un espai inferior */
+}
+
+/* Estils per al text principal (p) */
+.text_principal {
+  font-size: 1.2rem; /* Un tamany de text normal */
+  max-width: 600px; /* Limitem l'amplada per a la lectura */
+  margin: 0 auto 2.5rem; /* El centrem horitzontalment i li donem un marge inferior */
+  opacity: 0.8; /* El fem una mica transparent */
+}
+
+/* Estils per al contenidor de les categories */
+.categories {
+  display: flex; /* Utilitzem Flexbox per organitzar els elements */
+  justify-content: center; /* Centrem els elements horitzontalment */
+  gap: 20px; /* Donem un espai entre les categories */
+  margin: 30px 0 20px; /* Donem espais per sobre i per sota */
+  padding: 10px 0; /* I un espai interior també */
+  background-color: transparent; /* Fons transparent */
+  border-radius: 10px; /* Bordes arrodonits */
+  flex-wrap: wrap; /* Que si no hi caben vagin a la següent línia */
+}
+
+/* Estils per a cada categoria */
+.categoria {
+  display: inline-block; /* Poden estar a la mateixa línia */
+  margin-top: 1rem; /* Marge superior */
+  padding: 0.8rem 2rem; /* Espai interior */
+  background: var(--color-destacat); /* Utilitzem la variable per al fons */
+  color: white; /* Text blanc */
+  text-decoration: none; /* Eliminem el subratllat */
+  border-radius: 30px; /* Bordes ben arrodonits */
+  font-weight: 600; /* Text una mica més gruixut */
+  transition: var(--transicio); /* Afegim la transició suau */
+}
+
+/* Efecte hover per a les categories */
+.categoria:hover {
+  background: var(--color-secundari); /* Canviem el fons al passar el ratolí */
+}
+
+/* Estils per a la graella de productes */
+.graella_productes {
+  display: grid; /* Utilitzem CSS Grid per organitzar els productes */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Fem que s'adaptin a l'ample disponible */
+  gap: 2rem; /* Donem espai entre els productes */
+}
+
+/* Estils per a cada producte */
+.producte {
+  text-align: center; /* Centrem el text dins el producte */
+  padding: 1rem; /* Espai interior */
+  border: 1px solid #ddd; /* Una vora grisa suau */
+  border-radius: 10px; /* Bordes una mica arrodonits */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Una ombra suau */
+  transition: var(--transicio); /* Transició suau per als canvis */
+}
+
+/* Efecte hover per als productes */
+.producte:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Una ombra més forta al passar el ratolí */
+}
+
+/* Estils per a la imatge del producte */
+.producte img {
+  width: 100%; /* Que ocupi tot l'ample disponible */
+  height: auto; /* L'alçada s'adapta a la imatge */
+  border-radius: 10px; /* Bordes arrodonits */
+}
+
+/* Estils per al botó de comprar */
+.boto_comprar {
+  display: inline-block; /* Es comporta com un element en línia */
+  margin-top: 1rem; /* Marge superior */
+  padding: 0.8rem 2rem; /* Espai interior */
+  background: var(--color-destacat); /* El fons és del color que destaca */
+  color: white; /* Text blanc */
+  text-decoration: none; /* No subratllat */
+  border-radius: 30px; /* Bordes ben arrodonits */
+  font-weight: 600; /* Text gruixut */
+  transition: var(--transicio); /* Transició suau */
+  border: none;
+  cursor: pointer;
+}
+
+/* Efecte hover per al botó de comprar */
+.boto_comprar:hover {
+  background: var(--color-secundari); /* Canviem el color del fons al passar el ratolí */
+}
+
+/* Estils per a la graella de productes */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.product-image-container {
+    width: 100%;
+    padding-top: 100%; /* Això fa que el contenidor sigui quadrat */
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Això manté la proporció i omple l'espai */
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+.product-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.05);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-image-container::after {
+    opacity: 1;
+}
+
+.product-info {
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.product-info h3 {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.product-type {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.product-price {
+    color: var(--color-primari);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.product-stock {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.add-to-cart {
+    background: var(--color-destacat);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background: var(--color-secundari);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estils per als articles del carret */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.cart-item {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cart-item h3 {
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
+}
+
+.cart-item p {
+    margin: 0;
+    padding: 0.5rem;
+}
+
+/* Estils per al botó de eliminar articles */
+.remove-item {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-item:hover {
+    background: #c82333;
+}
+
+/* Estils per al total del carret */
+.cart-total {
+    text-align: right;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: var(--color-fons);
+    border-radius: 10px;
+}
+
+/* Estils per a les accions del carret */
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Estils per al botó de tornar */
+.boto-tornar {
+    background: var(--color-secundari);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.boto-tornar:hover {
+    background: var(--color-primari);
+}
+
+/* Estils per al botó de pagar */
+.boto-pagar {
+    background: var(--color-primari);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: not-allowed;
+    opacity: 0.7;
+}

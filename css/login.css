@@ -1,0 +1,140 @@
+.contingut-login { /* Contenidor principal del formulari de login */
+    min-height: 100vh; /* Ocupa tota l'alçada de la finestra */
+    display: flex; /* Utilitza flexbox per centrar el contingut */
+    align-items: center; /* Centra verticalment */
+    justify-content: center; /* Centra horitzontalment */
+    padding: 40px 20px; /* Afegeix espai al voltant del contingut */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/vidlogin.mp4') center/cover; /* Fons amb vídeo i gradient fosc */
+}
+
+.seccio-login { /* Secció que conté el formulari */
+    width: 100%; /* Ocupa tot l'ample disponible */
+    max-width: 450px; /* Limita l'amplada màxima */
+}
+
+.caixa-login { /* Contenidor visual del formulari */
+    background: white; /* Fons blanc */
+    padding: 40px; /* Espai interior */
+    border-radius: 15px; /* Cantonades arrodonides */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Ombra suau */
+}
+
+.titol-login { /* Títol del formulari */
+    font-family: 'Playfair Display', serif; /* Tipografia elegant */
+    font-size: 32px; /* Mida gran */
+    color: var(--color-text); /* Color del text */
+    text-align: center; /* Alineat al centre */
+    margin-bottom: 30px; /* Espai inferior */
+}
+
+.formulari-acces { /* Contenidor dels camps del formulari */
+    display: flex; /* Utilitza flexbox */
+    flex-direction: column; /* Disposició vertical */
+    gap: 20px; /* Espai entre elements */
+}
+
+.grup-camp { /* Grup d'etiqueta i camp */
+    display: flex; /* Utilitza flexbox */
+    flex-direction: column; /* Disposició vertical */
+    gap: 8px; /* Espai entre etiqueta i camp */
+}
+
+.grup-camp label { /* Etiquetes dels camps */
+    color: var(--color-text); /* Color del text */
+    font-weight: 600; /* Text en semibold */
+    font-size: 14px; /* Mida reduïda */
+}
+
+.grup-camp input { /* Camps d'entrada */
+    padding: 12px 16px; /* Espai intern */
+    border: 2px solid #e0e0e0; /* Vora suau */
+    border-radius: 8px; /* Cantonades arrodonides */
+    font-size: 16px; /* Mida del text */
+    transition: all 0.3s ease; /* Transició suau */
+}
+
+.grup-camp input:focus { /* Estat actiu dels camps */
+    border-color: var(--color-destacat); /* Vora destacada */
+    outline: none; /* Elimina contorn natiu */
+    box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2); /* Ombra suau */
+}
+
+.grup-opcions { /* Contenidor d'opcions addicionals */
+    display: flex; /* Utilitza flexbox */
+    justify-content: space-between; /* Espai entre elements */
+    align-items: center; /* Alineat verticalment */
+    font-size: 14px; /* Mida del text */
+}
+
+.opcio-recordar { /* Opció de recordar usuari */
+    display: flex; /* Utilitza flexbox */
+    align-items: center; /* Alineat verticalment */
+    gap: 8px; /* Espai entre checkbox i text */
+    cursor: pointer; /* Cursor de clic */
+}
+
+.text-recordar { /* Text de l'opció recordar */
+    color: var(--color-text); /* Color del text */
+}
+
+.enllac-oblidat { /* Enllaç de contrasenya oblidada */
+    color: var(--color-secundari); /* Color secundari */
+    text-decoration: none; /* Sense subratllat */
+    transition: color 0.3s ease; /* Transició suau */
+}
+
+.enllac-oblidat:hover { /* Efecte hover de l'enllaç */
+    color: var(--color-destacat); /* Color destacat */
+}
+
+.boto-entrar { /* Botó principal d'accés */
+    background: var(--color-destacat); /* Color de fons */
+    color: white; /* Text blanc */
+    border: none; /* Sense vora */
+    padding: 14px 24px; /* Espai intern */
+    border-radius: 8px; /* Cantonades arrodonides */
+    font-weight: 600; /* Text en semibold */
+    font-size: 16px; /* Mida del text */
+    cursor: pointer; /* Cursor de clic */
+    transition: all 0.3s ease; /* Transició suau */
+    margin-top: 10px; /* Espai superior */
+}
+
+.boto-entrar:hover { /* Efecte hover del botó */
+    background: #c4966a; /* Color més clar */
+    transform: translateY(-2px); /* Efecte d'elevació */
+}
+
+.text-registre { /* Text per nous usuaris */
+    text-align: center; /* Centrat */
+    margin-top: 20px; /* Espai superior */
+    font-size: 14px; /* Mida reduïda */
+    color: var(--color-text); /* Color del text */
+}
+
+.enllac-registre { /* Enllaç de registre */
+    color: var(--color-destacat); /* Color destacat */
+    text-decoration: none; /* Sense subratllat */
+    font-weight: 600; /* Text en semibold */
+    transition: color 0.3s ease; /* Transició suau */
+}
+
+.enllac-registre:hover { /* Efecte hover del registre */
+    color: #c4966a; /* Color més clar */
+}
+
+/* Estils personalitzats pel checkbox */
+.opcio-recordar input[type="checkbox"] { /* Estil del checkbox */
+    width: 18px; /* Amplada fixa */
+    height: 18px; /* Alçada fixa */
+    margin: 0; /* Sense marges */
+    cursor: pointer; /* Cursor de clic */
+    border: 2px solid var(--color-terciari); /* Vora personalitzada */
+    border-radius: 4px; /* Cantonades arrodonides */
+    transition: all 0.3s ease; /* Transició suau */
+}
+
+.opcio-recordar input[type="checkbox"]:checked { /* Checkbox seleccionat */
+    background-color: var(--color-destacat); /* Fons destacat */
+    border-color: var(--color-destacat); /* Vora destacada */
+}
